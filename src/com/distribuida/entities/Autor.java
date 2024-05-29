@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Autor {
 	
-//ATRIBUTOS
+//ATRIBUTOS DE LA CLASE AUTOR
 	private int idAutor;
 	private String nombre;
 	private String apellido;
