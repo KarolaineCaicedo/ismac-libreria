@@ -2,6 +2,10 @@ package com.distribuida.entities;
 
 import java.util.Date;
 
+import org.springframework.stereotype.Component;
+
+@Component
+
 public class Factura {
 	private int idFactura;
 	private String numFactura;
@@ -18,7 +22,7 @@ public class Factura {
 		this.fecha = fecha;
 		this.totalNeto = totalNeto;
 		this.iva = iva;
-	
+	//A continuación los getters and setters.
 	}
 	public int getIdFactura() {
 		return idFactura;
@@ -49,7 +53,7 @@ public class Factura {
 	}
 	public void setIva(Float iva) {
 		this.iva = iva;
-	
+	// EL toString
 	}
 	@Override
 	public String toString() {
