@@ -24,6 +24,7 @@ public class Libro {
 	private Float precio;
 	private int idCategoria;
 	private int idAutor;
+	public Libro() {}
 	public Libro(String idLibro, String titulo, String editorial, int numPaginas, String edicion, String idioma,
 			Date fechaPublicacion, String descripcion, String tipoPasta, String iSBN, int numEjemplares, String portada,
 			String presentacion, Float precio, int idCategoria, int idAutor) {
@@ -37,7 +38,8 @@ public class Libro {
 		this.fechaPublicacion = fechaPublicacion;
 		this.descripcion = descripcion;
 		this.tipoPasta = tipoPasta;
-		ISBN = iSBN;
+		this.ISBN = iSBN;
+		
 		this.numEjemplares = numEjemplares;
 		this.portada = portada;
 		this.presentacion = presentacion;

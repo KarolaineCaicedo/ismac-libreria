@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 
+
 public class FacturaDetalle {
 	
 	private int idFacturaDetalle;
@@ -11,6 +12,7 @@ public class FacturaDetalle {
 	private double subtotal;
 	private int idFactura;
 	private int idLibro;
+	public FacturaDetalle() {}
 	public FacturaDetalle(int idFacturaDetalle, int cantidad, Float subtotal, int idFactura, int idLibro) {
 		
 		this.idFacturaDetalle = idFacturaDetalle;
