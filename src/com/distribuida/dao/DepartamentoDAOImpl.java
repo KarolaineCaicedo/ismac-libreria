@@ -8,12 +8,11 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
-import com.distribuida.entities.Autor;
+import com.distribuida.entities.Departamento;
 
 
 @Repository
-public class AutorDAOImpl implements AutorDAO {
+public class DepartamentoDAOImpl implements DepartamentoDAO {
 
 	@Autowired
 	private SessionFactory  sessionFactory ;
@@ -21,35 +20,29 @@ public class AutorDAOImpl implements AutorDAO {
 	
 	@Override
 	@Transactional
-	public List<Autor> findAll() {
+	public List<Departamento> findAll() {
 		// TODO Auto-generated method stub
 		
 		Session session = sessionFactory.getCurrentSession();
-		return session.createQuery("from Autor", Autor.class).getResultList();
+		return session.createQuery("from Departamento", Departamento.class).getResultList();
 	}
 
 	@Override
-	public Autor findOne(int id) {
+	public Departamento findOne(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void add(Autor autor) {
+	public void add(Departamento departamento) {
 		// TODO Auto-generated method stub
-
 
 	}
 
 	@Override
-	public void up(Autor autor) {
+	public void del(int id) {
 		// TODO Auto-generated method stub
-	}
-		@Override
-		public void del(int id) {
-			// TODO Auto-generated method stub
-		
+
 	}
 
 }
-

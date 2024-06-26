@@ -32,10 +32,12 @@ public class Autor {
 	private String telefono;
 	@Column (name ="correo")
 	private String correo;
+	@Column (name ="direccion")
+	private String direccion;
 	
 	public Autor() {}
 	
-	public Autor(int idAutor, String nombre, String apellido, String pais, String telefono, String correo) {
+	public Autor(int idAutor, String nombre, String apellido, String pais, String telefono, String correo, String direccion) {
 		
 		this.idAutor = idAutor;
 		this.nombre = nombre;
@@ -43,6 +45,7 @@ public class Autor {
 		this.pais = pais;
 		this.telefono = telefono;
 		this.correo = correo;
+		this.direccion = direccion;
 	}
 	public int getIdAutor() {
 		return idAutor;
@@ -80,10 +83,20 @@ public class Autor {
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
+	
+	
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
 	@Override
 	public String toString() {
 		return "Autor [idAutor=" + idAutor + ", nombre=" + nombre + ", apellido=" + apellido + ", pais=" + pais
-				+ ", telefono=" + telefono + ", correo=" + correo + "]";
+				+ ", telefono=" + telefono + ", correo=" + correo + ", direccion=" + direccion + "]";
 	}
 	
 	
