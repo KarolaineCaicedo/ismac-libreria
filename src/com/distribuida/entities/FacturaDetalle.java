@@ -1,17 +1,34 @@
 package com.distribuida.entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import org.springframework.stereotype.Component;
 
 @Component
+@Entity
+@Table (name ="factura_detalle")
 
 
 public class FacturaDetalle {
+	@Id
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	
+	@Column (name = "idFacturaDetalle")
 	private int idFacturaDetalle;
+	@Column (name = "cantidad")
 	private int cantidad;
+	@Column (name = "subtotal")
 	private double subtotal;
+	@Column (name ="idFactura")
 	private int idFactura;
+	@Column (name ="idLibro")
 	private int idLibro;
+	
 	public FacturaDetalle() {}
 	public FacturaDetalle(int idFacturaDetalle, int cantidad, Float subtotal, int idFactura, int idLibro) {
 		
