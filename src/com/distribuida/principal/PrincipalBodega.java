@@ -4,19 +4,21 @@ import java.util.List;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.distribuida.dao.DepartamentoDAO;
-import com.distribuida.entities.Departamento;
+import com.distribuida.dao.BodegaDAO;
+import com.distribuida.entities.Bodega;
 
-public class PrincipalDepartamento {
+
+
+public class PrincipalBodega  {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("ApplicationContext.xml");
 		
-		DepartamentoDAO departamentoDAO = context.getBean("departamentoDAOImpl", DepartamentoDAO.class);
-		List<Departamento> departamentos = departamentoDAO.findAll();
+		BodegaDAO bodegaDAO = context.getBean("bodegaDAOImpl", BodegaDAO.class);
+		List<Bodega> bodegas = bodegaDAO.findAll();
 		
-		departamentos.forEach(item -> {
+		bodegas.forEach(item -> {
 			
 			System.out.println(item.toString());
 	
@@ -27,4 +29,3 @@ public class PrincipalDepartamento {
 	}
 
 }
-

@@ -2,33 +2,53 @@ package com.distribuida.entities;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 import org.springframework.stereotype.Component;
 
 @Component
 
 public class Libro {
 	
-	private String idLibro;
+	@Id
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	@Column(name = "id_libro")
+	private int idLibro;
+	@Column(name = "titulo")
 	private String titulo;
+	@Column(name = "editorial")
 	private String editorial;
+	@Column(name = "num_paginas")
 	private int numPaginas;
+	@Column(name = "edicion")
 	private String edicion;
+	@Column(name = "idioma")
 	private String idioma;
+	@Column(name = "fecha_publicacion")
 	private Date fechaPublicacion;
+	@Column(name = "descripcion")
 	private String descripcion;
+	@Column(name = "tipo_pasta")
 	private String tipoPasta;
-	private String ISBN;
+	@Column(name = "ISBN")
+	private String isbn;
+	@Column(name = "num_ejemplares")
 	private int numEjemplares;
+	@Column(name = "portada")
 	private String portada;
+	@Column(name = "presentacion")
 	private String presentacion;
-	private Float precio;
-	private int idCategoria;
-	private int idAutor;
-	public Libro() {}
-	public Libro(String idLibro, String titulo, String editorial, int numPaginas, String edicion, String idioma,
-			Date fechaPublicacion, String descripcion, String tipoPasta, String iSBN, int numEjemplares, String portada,
-			String presentacion, Float precio, int idCategoria, int idAutor) {
-	
+	@Column(name = "precio")
+	private double precio;
+	private Categoria  categoria;
+	private Autor autor;
+	public Libro(int idLibro, String titulo, String editorial, int numPaginas, String edicion, String idioma,
+			Date fechaPublicacion, String descripcion, String tipoPasta, String isbn, int numEjemplares, String portada,
+			String presentacion, double precio) {
+		
 		this.idLibro = idLibro;
 		this.titulo = titulo;
 		this.editorial = editorial;
@@ -38,19 +58,16 @@ public class Libro {
 		this.fechaPublicacion = fechaPublicacion;
 		this.descripcion = descripcion;
 		this.tipoPasta = tipoPasta;
-		this.ISBN = iSBN;
-		
+		this.isbn = isbn;
 		this.numEjemplares = numEjemplares;
 		this.portada = portada;
 		this.presentacion = presentacion;
 		this.precio = precio;
-		this.idCategoria = idCategoria;
-		this.idAutor = idAutor;
 	}
-	public String getIdLibro() {
+	public int getIdLibro() {
 		return idLibro;
 	}
-	public void setIdLibro(String idLibro) {
+	public void setIdLibro(int idLibro) {
 		this.idLibro = idLibro;
 	}
 	public String getTitulo() {
@@ -101,11 +118,11 @@ public class Libro {
 	public void setTipoPasta(String tipoPasta) {
 		this.tipoPasta = tipoPasta;
 	}
-	public String getISBN() {
-		return ISBN;
+	public String getIsbn() {
+		return isbn;
 	}
-	public void setISBN(String iSBN) {
-		ISBN = iSBN;
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
 	}
 	public int getNumEjemplares() {
 		return numEjemplares;
@@ -125,36 +142,32 @@ public class Libro {
 	public void setPresentacion(String presentacion) {
 		this.presentacion = presentacion;
 	}
-	public Float getPrecio() {
+	public double getPrecio() {
 		return precio;
 	}
-	public void setPrecio(Float precio) {
+	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
-	public int getIdCategoria() {
-		return idCategoria;
+	
+	public Categoria getCategoria() {
+		return categoria;
 	}
-	public void setIdCategoria(int idCategoria) {
-		this.idCategoria = idCategoria;
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
 	}
-	public int getIdAutor() {
-		return idAutor;
+	public Autor getAutor() {
+		return autor;
 	}
-	public void setIdAutor(int idAutor) {
-		this.idAutor = idAutor;
+	public void setAutor(Autor autor) {
+		this.autor = autor;
 	}
 	@Override
 	public String toString() {
 		return "Libro [idLibro=" + idLibro + ", titulo=" + titulo + ", editorial=" + editorial + ", numPaginas="
 				+ numPaginas + ", edicion=" + edicion + ", idioma=" + idioma + ", fechaPublicacion=" + fechaPublicacion
-				+ ", descripcion=" + descripcion + ", tipoPasta=" + tipoPasta + ", ISBN=" + ISBN + ", numEjemplares="
+				+ ", descripcion=" + descripcion + ", tipoPasta=" + tipoPasta + ", isbn=" + isbn + ", numEjemplares="
 				+ numEjemplares + ", portada=" + portada + ", presentacion=" + presentacion + ", precio=" + precio
-				+ ", idCategoria=" + idCategoria + ", idAutor=" + idAutor + "]";
+				+ "]";
 	}
 	
-	
-	
-	
-	
-
 }

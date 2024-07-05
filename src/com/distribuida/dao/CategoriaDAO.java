@@ -11,5 +11,6 @@ public interface CategoriaDAO {
 	public Categoria findOne(int id);
 	public void add(Categoria categoria);
 	public void up(Categoria categoria);
+	void del (int id);
 
 }
